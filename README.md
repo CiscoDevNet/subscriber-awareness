@@ -17,7 +17,7 @@ Figure 1 shows the problem we are targeting at: when a new flow comes into the n
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17064874/a4928aa4-4ff3-11e6-839a-60fb91cb7c26.png" height="150"/>
 </p>
-*Figure 2. Solution*
+*Figure 2. Proposed Solution*
 
 The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
 
@@ -46,7 +46,7 @@ Here are the basic REST calls of the project.
 * **Add new subscriber basic information**
 
   ```
-  POST http://<controller-addr>:8080/restconf/operations/subawa:register-subscriber-basic-info  
+  POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscriber-basic-info  
   {  
      "input": {  
         "subId": 1;  
@@ -58,7 +58,7 @@ Here are the basic REST calls of the project.
   ```
 * **Add new subscriber flow information**
 ```
-POST http://<controller-addr>:8080/restconf/operations/subawa:register-subscriber-flow-info
+POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscriber-flow-info
 {
     "input": {
         "subId": 1;
@@ -74,7 +74,7 @@ POST http://<controller-addr>:8080/restconf/operations/subawa:register-subscribe
 ```
 * **Get subscriber information in the system**
 ```
-GET http://<controller-addr>:8080/restconf/operational/subawa:subscriber-flow-info
+GET http://<controller-addr>:8181/restconf/operational/subawa:subscriber-flow-info
 ```
 * **Get the flow statistics (byte count) for each subscriber**
 ```
@@ -82,7 +82,7 @@ GET http://<controller-addr>:8181/restconf/operational/subawa:nodes-subscriber-i
 ```
 * **Notify the impacted subscriber when a node is broken**
 ```
-POST http://<controller-addr>:8080/restconf/operations/subawa:subscriber-affected
+POST http://<controller-addr>:8181/restconf/operations/subawa:subscriber-affected
 {
     "input": {
         "nodeName": "node:1"
