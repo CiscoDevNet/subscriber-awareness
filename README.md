@@ -30,7 +30,7 @@ Figure 3 shows the user interface to view the current network topology and add n
 
 Figure 4 shows the flow statistics in the system.
 <p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17072336/4702cf24-501c-11e6-8230-ceeeae0a1dc0.PNG" height="350" />
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17072963/5a4b9584-5021-11e6-8bae-e510ad94224c.PNG" height="350" />
 </p>
 *Figure.4 Statistics Panel*
 
