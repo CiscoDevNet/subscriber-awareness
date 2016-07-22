@@ -21,7 +21,14 @@ Figure 1 shows the problem we are targeting at: when a new flow comes into the n
 
 The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
 
-## Graphical User Interface (GUI)
+## Use Cases
+*	QoS Operation: Based on the subscriber information, QoS adjustment can be performed on the flows. 
+* Location tracking: When wifi subscribers roaming across access points, their location can be tracked based on the node (access points) they connected to.  
+*	Quality tracking: If a node (AP, router, etc.) fails, the subscribers and flows affected are immediately known. 
+*	Security Issue: For some security service, only flows from qualified subscriber can be routed. 
+
+
+## Graphical User Interface (GUI) Design
 Figure 3 shows the user interface to view the current network topology and add new subscriber information to the system.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17070892/4be4f566-5013-11e6-9ec9-4b732821e6c7.PNG" height="350"/>
@@ -42,7 +49,7 @@ Figure 5 shows the current subscribers in the systems and the impacted subscribe
 
 
 ## REST Calls
-Here are the basic REST calls of the project.
+Here are the basic REST calls used for the project.
 * **Add new subscriber basic information**
 
   ```
@@ -68,7 +75,7 @@ POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscribe
         "Port-Dst":8080;
         "Ip-Version":ipv4;
         "Ip-Protocol":TCP;
-        "timeOut":2000
+        "timeOut":100
     }
 }
 ```
