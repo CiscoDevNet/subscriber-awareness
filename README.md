@@ -9,17 +9,40 @@ OpenDaylight (ODL) is an open source application development and delivery platfo
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17064860/941333a4-4ff3-11e6-9d59-ffcca45a2310.png" height="150"/>
 </p>
-The problem we are targeting at is that when a new flow comes into the network, how can we associate it to its subscriber.
+*Figure 1. Targeting Problem*
+
+Figure 1 shows the problem we are targeting at: when a new flow comes into the network, how can we associate it to its subscriber.
 
 ## Our Solution
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17064874/a4928aa4-4ff3-11e6-839a-60fb91cb7c26.png" height="150"/>
 </p>
+*Figure 2. Solution*
+
 The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
 
 ## Graphical User Interface (GUI)
+Figure 3 shows the user interface to view the current network topology and add new subscriber information to the system.
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17070892/4be4f566-5013-11e6-9ec9-4b732821e6c7.PNG" height="350"/>
+</p>
+*Figure.3 Add Subscriber Panel*
+
+Figure 4 shows the flow statistics in the system.
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17072336/4702cf24-501c-11e6-8230-ceeeae0a1dc0.PNG" height="350" />
+</p>
+*Figure.4 Statistics Panel*
+
+Figure 5 shows the current subscribers in the systems and the impacted subscribers due to a node down incident.
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17072338/48e022e2-501c-11e6-8f4a-458c5dee6207.PNG" height="350"/>
+</p>
+*Figure.5 Impacted Subscriber Panel*
+
 
 ## REST Calls
+Here are the basic REST calls of the project.
 * **Add new subscriber basic information**
 
   ```
@@ -53,11 +76,11 @@ POST http://<controller-addr>:8080/restconf/operations/subawa:register-subscribe
 ```
 GET http://<controller-addr>:8080/restconf/operational/subawa:subscriber-flow-info
 ```
-* **Get the flow byte count for each subscriber**
+* **Get the flow statistics (byte count) for each subscriber**
 ```
 GET http://<controller-addr>:8181/restconf/operational/subawa:nodes-subscriber-info
 ```
-* **Get notified about the impacted subscriber when a node is broken**
+* **Notify the impacted subscriber when a node is broken**
 ```
 POST http://<controller-addr>:8080/restconf/operations/subawa:subscriber-affected
 {
