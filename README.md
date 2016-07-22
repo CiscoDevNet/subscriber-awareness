@@ -7,11 +7,14 @@ OpenDaylight (ODL) is an open source application development and delivery platfo
 
 ## Problem Statement
 <p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17063505/8019d620-4fec-11e6-9663-a53c4d235f7e.png" height="150"/>
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17064860/941333a4-4ff3-11e6-9d59-ffcca45a2310.png" height="150"/>
 </p>
-The problem we are targeting is that when a new flow comes into the network, how can we associate it to its subscriber?
+The problem we are targeting at is that when a new flow comes into the network, how can we associate it to its subscriber.
 
 ## Our Solution
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17064874/a4928aa4-4ff3-11e6-839a-60fb91cb7c26.png" height="150"/>
+</p>
 The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
 
 ## Graphical User Interface (GUI)
