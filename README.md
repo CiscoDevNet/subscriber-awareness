@@ -65,19 +65,19 @@ Here are the basic REST calls used for the project.
   ```
 * **Add new subscriber flow information**
 ```
-POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscriber-flow-info
-{
-    "input": {
-        "subId": 1;
-        "Ip-Src":"10.0.0.1/32";
-        "Ip-Dst":"10.0.0.3/32";
-        "Port-Src": 183;
-        "Port-Dst":8080;
-        "Ip-Version":ipv4;
-        "Ip-Protocol":TCP;
-        "timeOut":100
-    }
-}
+  POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscriber-flow-info
+  {
+      "input": {
+         "subId": 1;
+         "Ip-Src":"10.0.0.1/32";
+         "Ip-Dst":"10.0.0.3/32";
+         "Port-Src": 183;
+         "Port-Dst":8080;
+         "Ip-Version":ipv4;
+         "Ip-Protocol":TCP;
+         "timeOut":100
+      }
+  }
 ```
 * **Get subscriber information in the system**
 ```
