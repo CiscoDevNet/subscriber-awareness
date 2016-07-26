@@ -52,7 +52,7 @@ Figure 5 shows the current subscribers in the systems and the impacted subscribe
 Here are the basic REST calls used for the project.
 * **Add new subscriber basic information**
 
-  ```
+```
   POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscriber-basic-info  
   {  
      "input": {  
@@ -62,9 +62,9 @@ Here are the basic REST calls used for the project.
         "address": "Cisco Bldg. 6"  
       }  
   }  
-  ```
+```
 * **Add new subscriber flow information**
-  ```
+```
   POST http://<controller-addr>:8181/restconf/operations/subawa:register-subscriber-flow-info
   {
       "input": {
@@ -78,21 +78,21 @@ Here are the basic REST calls used for the project.
          "timeOut":100
       }
   }
-  ```
+```
 * **Get subscriber information in the system**
-  ```
+```
   GET http://<controller-addr>:8181/restconf/operational/subawa:subscriber-flow-info
-  ```
+```
 * **Get the flow statistics (byte count) for each subscriber**
-  ```
+```
   GET http://<controller-addr>:8181/restconf/operational/subawa:nodes-subscriber-info
-  ```
+```
 * **Notify the impacted subscriber when a node is broken**
-  ```
+```
   POST http://<controller-addr>:8181/restconf/operations/subawa:subscriber-affected
   {
       "input": {
          "nodeName": "node:1"
       }
   }
-  ```
+```
