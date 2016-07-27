@@ -7,25 +7,27 @@ OpenDaylight (ODL) is an open source application development and delivery platfo
 
 ## Problem Statement
 <p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17064860/941333a4-4ff3-11e6-9d59-ffcca45a2310.png" height="150"/>
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17195397/535090f0-5412-11e6-997d-5a0d261701b6.png" height="150"/>
 </p>
 *Figure 1. Targeting Problem*
 
-Figure 1 shows the problem we are targeting at: when a new flow comes into the network, how can we associate it to its subscriber.
+Figure 1 shows the problem we are targeting at: when a new flow comes into the network, how can we associate it to its subscriber. The current ODL platform is flow-aware and device-aware, but not subscriber-aware.We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
 
-## Our Solution
+
+
+## Core Technology
 <p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17064874/a4928aa4-4ff3-11e6-839a-60fb91cb7c26.png" height="150"/>
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17195218/730bcc62-5411-11e6-85fd-7f5c0793e3fd.png" height="150"/>
 </p>
-*Figure 2. Proposed Solution*
-
-The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
+*Figure 2. Core Teclnology*
+This is the core technology of the project to add the subscriber awareness in ODL. The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, ant the corresponding flowId will be stored with the subId.
 
 ## Use Cases
 *	QoS Operation: Based on the subscriber information, QoS adjustment can be performed on the flows. 
 * Location tracking: When wifi subscribers roaming across access points, their location can be tracked based on the node (access points) they connected to.  
 *	Quality tracking: If a node (AP, router, etc.) fails, the subscribers and flows affected are immediately known. 
 *	Security Issue: For some security service, only flows from qualified subscriber can be routed. 
+*	Handover Tracking: When a subscriber move from different network, the status can be tracked.
 
 
 ## Graphical User Interface (GUI) Design
