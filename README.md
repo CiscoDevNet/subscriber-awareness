@@ -21,7 +21,7 @@ Figure 1 shows the problem we are targeting at: when a new flow comes into the n
 </p>
 *Figure 2. Core Teclnology*  
 
-This is the core technology of the project to add the subscriber awareness in ODL. The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, ant the corresponding flowId will be stored with the subId.
+The core technology of our project is the process to link the subscriber in the system database with flow in the network.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId.
 
 ## Use Cases
 *	QoS Operation: Based on the subscriber information, QoS adjustment can be performed on the flows. 
