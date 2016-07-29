@@ -1,0 +1,29 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="odl-subawa-${project.version}" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <repository>mvn:org.opendaylight.yangtools/features-yangtools/0.8.1-Beryllium-SR1/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-mdsal/1.3.1-Beryllium-SR1/xml/features</repository>
+  <repository>mvn:org.opendaylight.mdsal.model/features-mdsal-model/0.8.1-Beryllium-SR1/xml/features</repository>
+  <repository>mvn:org.opendaylight.netconf/features-restconf/1.3.1-Beryllium-SR1/xml/features</repository>
+  <repository>mvn:org.opendaylight.dlux/features-dlux/0.3.1-Beryllium-SR1/xml/features</repository>
+  <repository>mvn:org.opendaylight.openflowplugin/features-openflowplugin/0.2.1-Beryllium-SR1/xml/features</repository>
+  <feature name="odl-subawa-api" version="${project.version}" description="OpenDaylight :: subawa :: api">
+    <feature version="${mdsal.model.version}">odl-mdsal-models</feature>
+    <bundle>mvn:org.opendaylight.subawa/subawa-api/0.8.2-Beryllium-SR2</bundle>
+  </feature>
+  <feature name="odl-subawa" version="${project.version}" description="OpenDaylight :: subawa">
+    <feature version="${mdsal.version}">odl-mdsal-broker</feature>
+    <feature version="${project.version}">odl-subawa-api</feature>
+    <feature version="${feature.openflowplugin.version}">odl-openflowplugin-flow-services</feature>
+    <bundle>mvn:org.opendaylight.subawa/subawa-impl/0.8.2-Beryllium-SR2</bundle>
+    <configfile finalname="${configfile.directory}/subawa.xml">mvn:org.opendaylight.subawa/subawa-impl/0.8.2-Beryllium-SR2/xml/config</configfile>
+  </feature>
+  <feature name="odl-subawa-rest" version="${project.version}" description="OpenDaylight :: subawa :: REST">
+    <feature version="${project.version}">odl-subawa</feature>
+    <feature version="${restconf.version}">odl-restconf</feature>
+  </feature>
+  <feature name="odl-subawa-ui" version="${project.version}" description="OpenDaylight :: subawa :: UI">
+    <feature version="${project.version}">odl-subawa-rest</feature>
+    <feature version="${restconf.version}">odl-mdsal-apidocs</feature>
+    <feature version="${mdsal.version}">odl-mdsal-xsql</feature>
+    <feature version="${dlux.version}">odl-dlux-yangui</feature>
+  </feature>
+</features>
