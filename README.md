@@ -22,6 +22,10 @@ Figure 1 shows the problem we are targeting at: when a new flow comes into the n
 *Figure 2. Core Teclnology*  
 
 The core technology of our project is the process to link the subscriber in the system database with flow in the network.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId.
+## Logic Flow Diagram
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17381598/8e7ef83c-5981-11e6-8aaf-b0c078cf68db.png" height="250"/>
+</p>
 
 ## Use Cases
 *	QoS Operation: Based on the subscriber information, QoS adjustment can be performed on the flows. 
