@@ -6,26 +6,37 @@
 OpenDaylight (ODL) is an open source application development and delivery platform (also referred to as a controller for software defined network (SDN)). By uniting the industry around a common SDN platform, the ODL community is helping to make interoperable, programmable networks a reality.
 
 ## Problem Statement
-<p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17195397/535090f0-5412-11e6-997d-5a0d261701b6.png" height="150"/>
-</p>
-*Figure 1. Targeting Problem*
+Our problem statement: when a new flow comes into the network element layer, how can we associate it to its subscriber.  
 
-Figure 1 shows the problem we are targeting at: when a new flow comes into the network, how can we associate it to its subscriber. The current ODL platform is flow-aware and device-aware, but not subscriber-aware.We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service.
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17420529/16576fd8-5a58-11e6-8388-c4f3a9593b5f.png" height="250"/>
+</p>
+*Figure 1. TMN model*
+
+In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the network element layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to hierarchy). The link to the service instance can be implemented in the future easily based on our project architecture.
+<p align="left">
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17421682/b47f1c62-5a60-11e6-8661-4594f00e1dd2.png" height="250"/>
+</p>
+*Figure 2. Association Hierarchy*  
+
 
 
 
 ## Core Technology
+### Subscriber, Flow, and Device Association
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17195218/730bcc62-5411-11e6-85fd-7f5c0793e3fd.png" height="250"/>
 </p>
-*Figure 2. Core Teclnology*  
+*Figure 3. Core Teclnology*  
 
-The core technology of our project is the process to link the subscriber in the system database with flow in the network.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId.
-## Logic Flow Diagram
+The core technology of our project is the process to link the subscriber in the system database with flow, device, and service instance in the network.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId. When the flow comes to the network, the southbound plugin will return the incoming nodes and byte count (optional for certain use cases). The logic flow diagram is shown in Figure 4. The Openflow switch is chosen here since it is easy to simulate using Mininet. 
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17381598/8e7ef83c-5981-11e6-8aaf-b0c078cf68db.png" height="250"/>
 </p>
+*Figure 4. Logic Flow Diagram* 
+
+### DOCSIS Flow
+DOCSIS flow is handled by Packet Cable MultiMedia (PCMM) in ODL. It provides an interface to control and manage service flow for CMTS network elements. the gateId for the service flows in PCMM can be the handler to store with subId.
 
 ## Use Cases
 *	QoS Operation: Based on the subscriber information, QoS adjustment can be performed on the flows. 
