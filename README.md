@@ -13,7 +13,7 @@ Our problem statement: when a new flow comes into the network element layer, how
 </p>
 *Figure 1. TMN model*
 
-In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the network element layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to hierarchy). The link to the service instance can be implemented in the future easily based on our project architecture.
+In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the network element layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The association hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to hierarchy). The association to the service instance can be implemented in the future easily based on our project architecture.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17421682/b47f1c62-5a60-11e6-8661-4594f00e1dd2.png" height="250"/>
 </p>
@@ -25,13 +25,13 @@ In the Telecommunication Management Network (TMN) Model shown in Figure 1., the 
 ## Core Technology
 ### Subscriber, Flow, and Device Association
 <p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17195218/730bcc62-5411-11e6-85fd-7f5c0793e3fd.png" height="250"/>
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17424816/5c67533e-5a7c-11e6-9a81-2b0ca02f82ad.png" height="250"/>
 </p>
 *Figure 3. Core Teclnology*  
 
 The core technology of our project is the process to link the subscriber in the system database with flow, device, and service instance in the network.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId. When the flow comes to the network, the southbound plugin will return the incoming nodes and byte count (optional for certain use cases). The logic flow diagram is shown in Figure 4. The Openflow switch is chosen here since it is easy to simulate using Mininet. 
 <p align="left">
-  <img src="https://cloud.githubusercontent.com/assets/15353120/17381598/8e7ef83c-5981-11e6-8aaf-b0c078cf68db.png" height="250"/>
+  <img src="https://cloud.githubusercontent.com/assets/15353120/17424852/aa0c533c-5a7c-11e6-918c-9e992f870976.png" height="250"/>
 </p>
 *Figure 4. Logic Flow Diagram* 
 
@@ -47,23 +47,23 @@ DOCSIS flow is handled by Packet Cable MultiMedia (PCMM) in ODL. It provides an 
 
 
 ## Graphical User Interface (GUI) Design
-Figure 3 shows the user interface to view the current network topology and add new subscriber information to the system.
+Figure 5 shows the user interface to view the current network topology and add new subscriber information to the system.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17070892/4be4f566-5013-11e6-9ec9-4b732821e6c7.PNG" height="350"/>
 </p>
-*Figure.3 Add Subscriber Panel*
+*Figure.5 Add Subscriber Panel*
 
-Figure 4 shows the flow statistics in the system.
+Figure 6 shows the flow statistics in the system.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17072963/5a4b9584-5021-11e6-8bae-e510ad94224c.PNG" height="350" />
 </p>
-*Figure.4 Statistics Panel*
+*Figure.6 Statistics Panel*
 
-Figure 5 shows the current subscribers in the systems and the impacted subscribers due to a node down incident.
+Figure 7 shows the current subscribers in the systems and the impacted subscribers due to a node down incident.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17072338/48e022e2-501c-11e6-8f4a-458c5dee6207.PNG" height="350"/>
 </p>
-*Figure.5 Impacted Subscriber Panel*
+*Figure.7 Impacted Subscriber Panel*
 
 
 ## REST Calls
