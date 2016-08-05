@@ -13,7 +13,9 @@ Our problem statement: when a new flow comes into the network element layer, how
 </p>
 *Figure 1. TMN model*
 
-In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the network element layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The association hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to hierarchy). The association to the service instance can be implemented in the future easily based on our project architecture.
+In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the element management layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. 
+
+The current ODL platform is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The association hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to hierarchy). The association to the service instance can be implemented in the future easily based on our project architecture.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17421682/b47f1c62-5a60-11e6-8661-4594f00e1dd2.png" height="250"/>
 </p>
@@ -29,7 +31,7 @@ In the Telecommunication Management Network (TMN) Model shown in Figure 1., the 
 </p>
 *Figure 3. Core Teclnology*  
 
-The core technology of our project is the process to link the subscriber in the system database with flow, device, and service instance in the network.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId. When the flow comes to the network, the southbound plugin will return the incoming nodes and byte count (optional for certain use cases). The logic flow diagram is shown in Figure 4. The Openflow switch is chosen here since it is easy to simulate using Mininet. 
+The core technology of our project is the process to link the subscriber in the system database with flow, device, and service instance.  The subscriber information and its flow features can be provided by the home gateway, application, softphone, application network signaling to the ODL controller. The flow features will be put in the match field, and the corresponding flowId will be stored with the subId. When the flow comes to the network, the southbound plugin will return the incoming nodes and byte count (optional for certain use cases). The logic flow diagram is shown in Figure 4. The Openflow switch is chosen here since it is easy to simulate using Mininet. 
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17424852/aa0c533c-5a7c-11e6-918c-9e992f870976.png" height="250"/>
 </p>
