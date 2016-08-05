@@ -16,7 +16,7 @@ When a new flow comes into the network, how can we associate it to its subscribe
 
 In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the element management layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. 
 
-The role of ODL platform corresponds to the element management layer in an SDN network. Currently, ODL is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The association hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to hierarchy). The association to the service instance can be implemented in the future easily based on our project architecture.
+The role of ODL platform corresponds to the element management layer in an SDN network. Currently, ODL is flow-aware and device-aware, but not subscriber-aware. We add the subscriber awarenss to the ODL platform to enable the association between flow, subscriber, device, and service. The association hierarchy is shown in Figure 2. Flows, device, subscriber, and service instance can point to each other (not limited to the hierarchy). The association to the service instance can be implemented in the future easily based on our project architecture.
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17425652/aa0155f6-5a84-11e6-81e8-99a642c3f399.png" height="250"/>
 </p>
@@ -39,7 +39,7 @@ The core technology of our project is the process to link the subscriber in the 
 *Figure 4. Logic Flow Diagram* 
 
 ### DOCSIS Flow
-DOCSIS flow is handled by Packet Cable MultiMedia (PCMM) in ODL. It provides an interface to control and manage service flow for CMTS network elements. the gateId for the service flows in PCMM can be the handler to store with subId.
+DOCSIS flow is handled by Packet Cable MultiMedia (PCMM) in ODL. It provides an interface to control and manage service flow for CMTS network elements. The gateId of the service flows in PCMM can be used to store with the subId to enable the flow-subscriber association.
 
 ## Use Cases
 *	QoS Operation: Based on the subscriber information, QoS adjustment can be performed on the flows. 
