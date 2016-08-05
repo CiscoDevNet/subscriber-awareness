@@ -6,12 +6,12 @@
 OpenDaylight (ODL) is an open source application development and delivery platform (also referred to as a controller for software defined network (SDN)). By uniting the industry around a common SDN platform, the ODL community is helping to make interoperable, programmable networks a reality.
 
 ## Problem Statement
-Our problem statement: when a new flow comes into the network element layer, how can we associate it to its subscriber.  
 
 <p align="left">
   <img src="https://cloud.githubusercontent.com/assets/15353120/17420529/16576fd8-5a58-11e6-8388-c4f3a9593b5f.png" height="250"/>
 </p>
 *Figure 1. TMN model*
+When a new flow comes into the network element layer, how can we associate it to its subscriber?  
 
 In the Telecommunication Management Network (TMN) Model shown in Figure 1., the subscriber awareness fades away as the layer goes down, which means that the element management layer may have no idea who is the subscriber of the flow while the business management layer has all the subscriber knowledge. 
 
