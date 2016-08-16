@@ -5,6 +5,10 @@
 </p>
 OpenDaylight (ODL) is an open source application development and delivery platform (also referred to as a controller for software defined network (SDN)). By uniting the industry around a common SDN platform, the ODL community is helping to make interoperable, programmable networks a reality.
 
+## Team
+* Alon Bernstein  
+* Chuanji (Jenny) Zhang  
+
 ## Problem Statement
 
 <p align="left">
